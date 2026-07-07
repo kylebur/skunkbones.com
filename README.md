@@ -1,4 +1,4 @@
-# SkunkBones.com - v1.0.1
+# SkunkBones.com - v1.0.2
 ### Artisanal Midcoast Maine Skunk Bones E-Commerce Store
 
 Welcome to **SkunkBones.com**, the premier, high-fidelity parody e-commerce destination for sun-bleached, double-deodorized Striped Skunk (*Mephitis mephitis*) skeletal specimens harvested ethically along the misty shores of Midcoast Maine (Boothbay Harbor, Southport, and Edgecomb). 
@@ -52,6 +52,8 @@ To automatically record orders in a Google Sheet:
 3. Go to **Extensions > Apps Script** in the sheet menu.
 4. Paste the following script into `Code.gs` (replacing all code):
    ```javascript
+   /** @OnlyCurrentDoc */
+
    function doPost(e) {
      try {
        var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -126,6 +128,10 @@ To redirect visitors going to your custom domain `skunkbones.com` to this hosted
 ---
 
 ## Change Log
+
+### v1.0.2 (2026-07-07)
+- Added `/** @OnlyCurrentDoc */` safety annotation to Google Apps Script snippet to restrict document-access scopes.
+- Incremented codebase versions to v1.0.2.
 
 ### v1.0.1 (2026-07-07)
 - Added Connecticut (CT) to shipping restrictions and checkout validations.

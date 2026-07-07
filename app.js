@@ -1,4 +1,4 @@
-/* app.js - v1.0.1 */
+/* app.js - v1.0.2 */
 /* Developed for skunkbones.com - Midcoast Maine Skunk Bones */
 
 // 1. Product Database

@@ -1,4 +1,4 @@
-<!-- skunkbones.com - v1.0.1 -->
+<!-- skunkbones.com - v1.0.2 -->
 <!-- Developed for skunkbones.com - Midcoast Maine Skunk Bones -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
 <body>
 
     <!-- Version Badge (Required by Rule 3) -->
-    <div id="gui-version-badge">skunkbones.com v1.0.1</div>
+    <div id="gui-version-badge">skunkbones.com v1.0.2</div>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -446,6 +446,8 @@
                     <h4>Step 2: Add Google Apps Script</h4>
                     <p>Go to <strong>Extensions &gt; Apps Script</strong>. Paste the code snippet below into the editor (replace everything):</p>
                     <textarea class="code-snippet-box" readonly onclick="this.select()">
+/** @OnlyCurrentDoc */
+
 function doPost(e) {
   try {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -535,7 +537,7 @@ function doGet(e) {
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SkunkBones.com. All Rights Reserved. Version 1.0.1. "Smell the Authenticity."</p>
+            <p>&copy; 2026 SkunkBones.com. All Rights Reserved. Version 1.0.2. "Smell the Authenticity."</p>
         </div>
     </footer>
 
