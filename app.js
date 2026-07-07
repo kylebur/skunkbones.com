@@ -1,4 +1,4 @@
-/* app.js - v1.0.6 */
+/* app.js - v1.0.7 */
 /* Developed for skunkbones.com - Midcoast Maine Skunk Bones */
 
 // 1. Product Database
@@ -87,7 +87,7 @@ const triviaFacts = [
 const EXCLUDED_STATES = ['CA', 'NY', 'TX', 'GA', 'HI', 'WA', 'CT'];
 
 // Obfuscated Google Sheets URL (Base64 of Web App URL)
-const OBFUSCATED_SHEET_URL = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6ZTdiMEtyY1RhdnliUmlUVmdmU0diR3FEalk5OGNOelFYR2QtQ3VGbmJ2eFF5cjY1TGZsSmhBTkJLM2tGTmlQdVdsQS9leGVj';
+const OBFUSCATED_SHEET_URL = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6Q256OTBMMDRUU292T3NndVpaZkJOY1pHWl8yUWc5UXhSc3Q3SEZzYmQycW9GVFRQT0thbF9pTUpmN2hIdDk3SzdVQS9leGVj';
 
 // 4. Cart & UI State
 let cart = [];
