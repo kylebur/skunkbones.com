@@ -1,4 +1,4 @@
-# SkunkBones.com - v1.0.7
+# SkunkBones.com - v1.0.8
 ### Artisanal Midcoast Maine Skunk Bones E-Commerce Store
 
 Welcome to **SkunkBones.com**, the premier, high-fidelity parody e-commerce destination for sun-bleached, double-deodorized Striped Skunk (*Mephitis mephitis*) skeletal specimens harvested ethically along the misty shores of Midcoast Maine (Boothbay Harbor, Southport, and Edgecomb). 
@@ -128,6 +128,10 @@ To redirect visitors going to your custom domain `skunkbones.com` to this hosted
 ---
 
 ## Change Log
+
+### v1.0.8 (2026-07-07)
+- Removed public "Sheet Setup" links from the header navigation menu for cleaner client UI and improved security.
+- Incremented codebase version to v1.0.8.
 
 ### v1.0.7 (2026-07-07)
 - Pre-configured the default Google Sheets logging endpoint using the user's newly deployed secure Web App URL (Base64-obfuscated).
