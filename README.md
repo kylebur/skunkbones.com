@@ -1,4 +1,4 @@
-# SkunkBones.com - v1.0.0
+# SkunkBones.com - v1.0.1
 ### Artisanal Midcoast Maine Skunk Bones E-Commerce Store
 
 Welcome to **SkunkBones.com**, the premier, high-fidelity parody e-commerce destination for sun-bleached, double-deodorized Striped Skunk (*Mephitis mephitis*) skeletal specimens harvested ethically along the misty shores of Midcoast Maine (Boothbay Harbor, Southport, and Edgecomb). 
@@ -9,7 +9,7 @@ This project is built using a modern, lightweight single-page application (SPA) 
 
 ## Features
 1. **Curated Product Selection**: A catalog of bones sorted by category (Craniums, Vertebrae, Limbs, Sets) featuring funny, charming descriptions of Captain Barnaby's harvesting process.
-2. **State Compliance Validator**: An active shipping filter that blocks acquisitions from states with strict wildlife trade statutes (California, New York, Texas, Georgia, Hawaii, and Washington).
+2. **State Compliance Validator**: An active shipping filter that blocks acquisitions from states with strict wildlife trade statutes (California, Connecticut, New York, Texas, Georgia, Hawaii, and Washington).
 3. **Google Sheets Order Logging**: Submits orders directly to a Google Sheet via a lightweight, serverless Google Apps Script webhook.
 4. **Interactive Skeletal Diagram**: Clickable hotspots showcasing biological trivia about Maine skunks.
 5. **Responsive Premium Aesthetics**: Beautiful forest-green and ivory palettes, typography from Google Fonts, custom CSS layouts, and smooth animations.
@@ -126,6 +126,10 @@ To redirect visitors going to your custom domain `skunkbones.com` to this hosted
 ---
 
 ## Change Log
+
+### v1.0.1 (2026-07-07)
+- Added Connecticut (CT) to shipping restrictions and checkout validations.
+- Incremented version across codebase to v1.0.1.
 
 ### v1.0.0 (2026-07-07)
 - Initial release of the complete skunkbones.com e-commerce platform.

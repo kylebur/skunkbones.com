@@ -1,4 +1,4 @@
-/* app.js - v1.0.0 */
+/* app.js - v1.0.1 */
 /* Developed for skunkbones.com - Midcoast Maine Skunk Bones */
 
 // 1. Product Database
@@ -84,7 +84,7 @@ const triviaFacts = [
 ];
 
 // 3. State Exclusions
-const EXCLUDED_STATES = ['CA', 'NY', 'TX', 'GA', 'HI', 'WA'];
+const EXCLUDED_STATES = ['CA', 'NY', 'TX', 'GA', 'HI', 'WA', 'CT'];
 
 // 4. Cart & UI State
 let cart = [];
