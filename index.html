@@ -1,0 +1,543 @@
+<!-- skunkbones.com - v1.0.0 -->
+<!-- Developed for skunkbones.com - Midcoast Maine Skunk Bones -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkunkBones.com | Artisanal Midcoast Maine Skunk Bones</title>
+    <meta name="description" content="Authentic, sun-bleached, and double-deodorized skunk bones harvested ethically from the misty shores of Midcoast Maine. A premium curiosity for the discerning collector.">
+    <!-- Google Fonts: Playfair Display for elegant headers, Montserrat for clean body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Version Badge (Required by Rule 3) -->
+    <div id="gui-version-badge">skunkbones.com v1.0.0</div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span>🍂 FREE SHIPPING ON ORDERS OVER $100 • RESTRICTIONS APPLY (NO SHIPPING TO CA, NY, TX, GA, HI, WA) 🍂</span>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo" onclick="navigateTo('home')">
+                <span class="logo-main">SKUNKBONES</span>
+                <span class="logo-sub">MIDCOAST MAINE</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#shop" class="nav-item active" onclick="navigateTo('home')">Shop</a>
+                <a href="#story" class="nav-item" onclick="navigateTo('story')">Our Story</a>
+                <a href="#legality" class="nav-item" onclick="navigateTo('legality')">Legality</a>
+                <a href="#facts" class="nav-item" onclick="navigateTo('facts')">Fun Facts</a>
+                <a href="#sheets-guide" class="nav-item highlight" onclick="openSheetsModal()">Sheet Setup</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-btn" onclick="toggleCart(true)">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Content Wrapper -->
+    <main class="content-wrapper">
+
+        <!-- 1. HOME / SHOP VIEW -->
+        <section id="view-home" class="page-view active">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-tagline">ETHICALLY FORAGED • OCEAN-CURED</span>
+                    <h1>Sun-Bleached by Atlantic Gales</h1>
+                    <p>Discover Midcoast Maine's premier collection of hand-salvaged, double-deodorized skunk skeletal specimens. Crafted by nature, curated for the refined mantelpiece.</p>
+                    <div class="hero-buttons">
+                        <a href="#products-grid" class="btn btn-primary" onclick="scrollToProducts()">Browse Specimens</a>
+                        <a href="#" class="btn btn-secondary" onclick="navigateTo('story')">Meet the Captain</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Propositions -->
+            <div class="value-props">
+                <div class="prop-card">
+                    <div class="prop-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>100% Ethical Salvage</h3>
+                    <p>No skunks are harmed. All bones are collected from natural forest salvage along the Boothbay peninsula.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon"><i class="fa-solid fa-wind"></i></div>
+                    <h3>Double-Deodorized</h3>
+                    <p>Cured with wild rosemary, baking soda, and local salt-fog. Guaranteed completely scent-free.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Maine Certified</h3>
+                    <p>Harvested in accordance with Maine wildlife salvage codes. Authenticity certificate included.</p>
+                </div>
+            </div>
+
+            <!-- Shop Section -->
+            <div class="shop-section" id="products-grid">
+                <div class="section-header">
+                    <h2>The Autumn Collection</h2>
+                    <p>Each specimen is singular and comes with a wooden display plinth and Captain Barnaby's signed field notes.</p>
+                    
+                    <!-- Filters -->
+                    <div class="category-filters">
+                        <button class="filter-btn active" onclick="filterCategory('all')">All Specimens</button>
+                        <button class="filter-btn" onclick="filterCategory('craniums')">Craniums</button>
+                        <button class="filter-btn" onclick="filterCategory('vertebrae')">Vertebrae & Ribs</button>
+                        <button class="filter-btn" onclick="filterCategory('limbs')">Limbs & Paws</button>
+                        <button class="filter-btn" onclick="filterCategory('sets')">Curated Sets</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="shop-products">
+                    <!-- Dynamic products will be injected by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 2. OUR STORY VIEW -->
+        <section id="view-story" class="page-view">
+            <div class="story-container">
+                <div class="story-image-wrapper">
+                    <img src="assets/captain_barnaby.jpg" alt="Captain Barnaby Higgins" class="story-image">
+                    <div class="image-caption">Captain Barnaby Higgins, inspecting a fresh salvage near Linekin Bay.</div>
+                </div>
+                <div class="story-content">
+                    <span class="story-tag">OUR ORIGIN</span>
+                    <h2>A Whiff of Whimsy</h2>
+                    <p>For forty years, Captain Barnaby Higgins sailed the choppy waters of the Gulf of Maine, chasing lobsters and dodging nor'easters. But it was on his daily shore walks along the rocky hemlock-lined coves of Boothbay Harbor that he found his true calling.</p>
+                    
+                    <p>It started with a single, perfectly sun-bleached skunk cranium wedged between two granite ledges. Impressed by the density and pearlescent sheen of the bone—a result of the local skunk population's high-calcium diet of lobster shells and soft-shell clams—Barnaby brought it home, cleaned it, and set it on his mantle.</p>
+                    
+                    <blockquote>
+                        "A lobster shell feeds a skunk. The Maine wind bleaches the bone. I just do the dusting."
+                        <cite>— Captain Barnaby</cite>
+                    </blockquote>
+
+                    <p>Word spread from Edgecomb to Wiscasset. Summer folks wanted them. Locals wanted them for good luck during winter gales. Thus, <strong>SkunkBones.com</strong> was born. Today, Barnaby operates a gentle, non-invasive salvage operation. Working in tandem with local woodsmen and landowners, we collect bones only from animals that have naturally passed. It’s a sustainable, circular economy that pays homage to Maine’s most misunderstood mammal.</p>
+                    
+                    <div class="story-cta">
+                        <h3>Our Deodorization Process</h3>
+                        <p>Many ask, "Does it... smell?" The answer is a resounding <strong>no</strong>. Each bone undergoes the proprietary <em>Boothbay Triple-Wash</em>: a 14-day bath in distilled sea-mist, baking soda, and wild Maine rosemary, followed by 30 days of sun-bleaching on high racks overlooking the Atlantic gales. The result is a pure, chalk-white, completely odorless calcium specimen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. LEGALITY VIEW -->
+        <section id="view-legality" class="page-view">
+            <div class="legal-container">
+                <div class="legal-header">
+                    <i class="fa-solid fa-scale-unbalanced-flip legal-icon"></i>
+                    <h2>State Laws & Shipping Disclosures</h2>
+                    <p>We believe in absolute transparency, ethical custody, and avoiding game warden audits.</p>
+                </div>
+
+                <div class="legal-grid">
+                    <div class="legal-card">
+                        <h3>Is this actually legal?</h3>
+                        <p><strong>Yes, in the State of Maine.</strong> Under the Maine Department of Inland Fisheries & Wildlife regulations, the Striped Skunk (<em>Mephitis mephitis</em>) is classified as a furbearer. Naturally salvaged skeletal remains of furbearing animals that died of natural causes or accidents may be legally collected, possessed, and sold commercially by licensed residents. We hold all necessary local salvage permits and state registrations.</p>
+                        <div class="legal-badge"><i class="fa-solid fa-check-double"></i> 100% Maine Legal</div>
+                    </div>
+
+                    <div class="legal-card warning">
+                        <h3>State-by-State Shipping Exclusions</h3>
+                        <p>Wildlife laws vary dramatically across the United States. Several states have strict regulations prohibiting the commercial sale or import of wild furbearer parts, or require complex commercial licenses. To ensure compliance, <strong>we cannot ship any bone specimens to the following states:</strong></p>
+                        
+                        <ul class="excluded-states-list">
+                            <li><strong>California:</strong> Strict regulations on wild animal parts import (Cal. Fish & Game Code § 3039).</li>
+                            <li><strong>New York:</strong> Restricts the sale of parts of wild furbearing animals without local dealer permits.</li>
+                            <li><strong>Texas:</strong> Restricts trade in native wild furbearers and their parts.</li>
+                            <li><strong>Georgia:</strong> Prohibits import/sale of wild-caught mammal parts.</li>
+                            <li><strong>Hawaii:</strong> Heavy bio-security and import restrictions on animal materials.</li>
+                            <li><strong>Washington:</strong> Restricted commercial trade of native wildlife skeletons.</li>
+                        </ul>
+                        
+                        <p class="legal-disclaimer">If you place an order with a shipping address in one of these states, our checkout validator will block the order. We apologize to skeletal enthusiasts in these regions.</p>
+                    </div>
+                </div>
+
+                <div class="legal-faq">
+                    <h3>Frequently Legal Questions</h3>
+                    <div class="faq-item">
+                        <h4>Do you ship internationally?</h4>
+                        <p>No. Under the federal Lacey Act and various international treaty regulations (including CITES guidelines on mammalian exports), international shipment of wildlife bones is extremely complex. We ship exclusively to eligible U.S. states.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Does a certificate of origin come with my purchase?</h4>
+                        <p>Yes. Every bone or set comes with a hand-stamped Certificate of Ethical Salvage, detailing the general recovery area (e.g., "Edgecomb Ridge", "Southport Marsh") and the year of salvage, signed by Captain Barnaby Higgins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. FUN FACTS VIEW -->
+        <section id="view-facts" class="page-view">
+            <div class="facts-container">
+                <div class="facts-header">
+                    <h2>Skunk Skeletal Trivia</h2>
+                    <p>Impress your dinner party guests with these unique biological facts about the Striped Skunk (Mephitis mephitis).</p>
+                </div>
+
+                <div class="facts-interactive">
+                    <div class="interactive-diagram-wrapper">
+                        <img src="assets/bone_collection.jpg" alt="Bone Collection Grid" class="interactive-image">
+                        <div class="diagram-overlay">
+                            <span class="pulse-point" style="top: 25%; left: 48%;" onclick="showFact(0)"></span>
+                            <span class="pulse-point" style="top: 45%; left: 45%;" onclick="showFact(1)"></span>
+                            <span class="pulse-point" style="top: 60%; left: 35%;" onclick="showFact(2)"></span>
+                            <span class="pulse-point" style="top: 80%; left: 60%;" onclick="showFact(3)"></span>
+                        </div>
+                    </div>
+
+                    <div class="fact-detail-box" id="fact-display">
+                        <i class="fa-solid fa-circle-info display-icon"></i>
+                        <h3 id="fact-title">Interactive Skeletal Map</h3>
+                        <p id="fact-text">Click on the glowing gold nodes on the bone specimen tray to reveal fascinating, lobster-infused biological facts about Maine skunk bones.</p>
+                        <span class="fact-extra" id="fact-extra"></span>
+                    </div>
+                </div>
+
+                <div class="facts-list">
+                    <div class="fact-card" onclick="showFact(0)">
+                        <h4>1. The High-Calcium Lobster Diet</h4>
+                        <p>Midcoast Maine skunks frequent lobster traps, wharves, and trash bins, eating high volumes of lobster carapace. This rich marine calcium makes their bones roughly 14% denser and shinier than inland skunks.</p>
+                    </div>
+                    <div class="fact-card" onclick="showFact(1)">
+                        <h4>2. Scent-Resistant Calcium Matrix</h4>
+                        <p>While a skunk's scent glands are highly potent, their skeletal structure does not store musk. The bones are standard, high-purity mammalian calcium and contain zero scent compounds once properly cured.</p>
+                    </div>
+                    <div class="fact-card" onclick="showFact(2)">
+                        <h4>3. 180-Degree Spine Flexibility</h4>
+                        <p>A skunk's lumbar vertebrae are uniquely spaced, allowing the animal to bend its spine in an extreme U-shape. This permits them to face their attacker and aim their scent glands simultaneously.</p>
+                    </div>
+                    <div class="fact-card" onclick="showFact(3)">
+                        <h4>4. The Sagittal Crest</h4>
+                        <p>Mature male skunks have a distinct raised ridge along the top of their skull (the sagittal crest). This anchor point supports incredibly strong jaw muscles, useful for cracking crab shells and wild acorns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shopping Cart Drawer (Right Slide-in) -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart-btn" onclick="toggleCart(false)"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Dynamic cart items -->
+            <div class="empty-cart-msg">Your cart is empty. Add a Maine specimen to begin.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cart-subtotal-price">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart(false)"></div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-backdrop" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Specimen Acquisition Checkout</h3>
+                <button class="close-modal-btn" onclick="closeCheckout()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div id="checkout-alert-box" class="alert-box error hidden"></div>
+
+            <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+                <div class="checkout-grid">
+                    <!-- Billing & Shipping -->
+                    <div class="checkout-section">
+                        <h4>1. Shipping Details</h4>
+                        
+                        <div class="form-group">
+                            <label for="checkout-name">Full Name</label>
+                            <input type="text" id="checkout-name" required placeholder="Johnathan Alden">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkout-email">Email Address</label>
+                            <input type="email" id="checkout-email" required placeholder="alden@boothbay.org">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkout-address">Street Address</label>
+                            <input type="text" id="checkout-address" required placeholder="12 Pine Needle Way">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkout-city">City</label>
+                                <input type="text" id="checkout-city" required placeholder="Boothbay Harbor">
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-state">State</label>
+                                <select id="checkout-state" required onchange="validateStateSelection()">
+                                    <option value="" disabled selected>Select State</option>
+                                    <option value="AL">Alabama (AL)</option>
+                                    <option value="AK">Alaska (AK)</option>
+                                    <option value="AZ">Arizona (AZ)</option>
+                                    <option value="AR">Arkansas (AR)</option>
+                                    <option value="CA">California (CA) - RESTRICTED</option>
+                                    <option value="CO">Colorado (CO)</option>
+                                    <option value="CT">Connecticut (CT)</option>
+                                    <option value="DE">Delaware (DE)</option>
+                                    <option value="FL">Florida (FL)</option>
+                                    <option value="GA">Georgia (GA) - RESTRICTED</option>
+                                    <option value="HI">Hawaii (HI) - RESTRICTED</option>
+                                    <option value="ID">Idaho (ID)</option>
+                                    <option value="IL">Illinois (IL)</option>
+                                    <option value="IN">Indiana (IN)</option>
+                                    <option value="IA">Iowa (IA)</option>
+                                    <option value="KS">Kansas (KS)</option>
+                                    <option value="KY">Kentucky (KY)</option>
+                                    <option value="LA">Louisiana (LA)</option>
+                                    <option value="ME">Maine (ME)</option>
+                                    <option value="MD">Maryland (MD)</option>
+                                    <option value="MA">Massachusetts (MA)</option>
+                                    <option value="MI">Michigan (MI)</option>
+                                    <option value="MN">Minnesota (MN)</option>
+                                    <option value="MS">Mississippi (MS)</option>
+                                    <option value="MO">Missouri (MO)</option>
+                                    <option value="MT">Montana (MT)</option>
+                                    <option value="NE">Nebraska (NE)</option>
+                                    <option value="NV">Nevada (NV)</option>
+                                    <option value="NH">New Hampshire (NH)</option>
+                                    <option value="NJ">New Jersey (NJ)</option>
+                                    <option value="NM">New Mexico (NM)</option>
+                                    <option value="NY">New York (NY) - RESTRICTED</option>
+                                    <option value="NC">North Carolina (NC)</option>
+                                    <option value="ND">North Dakota (ND)</option>
+                                    <option value="OH">Ohio (OH)</option>
+                                    <option value="OK">Oklahoma (OK)</option>
+                                    <option value="OR">Oregon (OR)</option>
+                                    <option value="PA">Pennsylvania (PA)</option>
+                                    <option value="RI">Rhode Island (RI)</option>
+                                    <option value="SC">South Carolina (SC)</option>
+                                    <option value="SD">South Dakota (SD)</option>
+                                    <option value="TN">Tennessee (TN)</option>
+                                    <option value="TX">Texas (TX) - RESTRICTED</option>
+                                    <option value="UT">Utah (UT)</option>
+                                    <option value="VT">Vermont (VT)</option>
+                                    <option value="VA">Virginia (VA)</option>
+                                    <option value="WA">Washington (WA) - RESTRICTED</option>
+                                    <option value="WV">West Virginia (WV)</option>
+                                    <option value="WI">Wisconsin (WI)</option>
+                                    <option value="WY">Wyoming (WY)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkout-zip">Zip Code</label>
+                            <input type="text" id="checkout-zip" required placeholder="04538">
+                        </div>
+                    </div>
+
+                    <!-- Payment & Summary -->
+                    <div class="checkout-section summary-sec">
+                        <h4>2. Summary & Mock Payment</h4>
+                        
+                        <div class="order-summary-box">
+                            <div class="summary-title">Order Items</div>
+                            <div id="checkout-items-list" class="checkout-items-list">
+                                <!-- JS list -->
+                            </div>
+                            <hr>
+                            <div class="summary-line">
+                                <span>Shipping</span>
+                                <span id="checkout-shipping-cost">FREE</span>
+                            </div>
+                            <div class="summary-line total">
+                                <span>Grand Total</span>
+                                <span id="checkout-grand-total">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-box">
+                            <h5><i class="fa-solid fa-lock"></i> Trust-Based Checkout</h5>
+                            <p class="payment-mock-msg">Since we are currently awaiting credit gateway clearance, no actual payment is charged. Your order will be logged to our ledger, and we will contact you regarding shipping.</p>
+                            
+                            <div class="form-group">
+                                <label for="checkout-card">Mock Card Number (any numbers)</label>
+                                <input type="text" id="checkout-card" placeholder="4111 2222 3333 4444" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" placeholder="MM/YY" required style="width: 50%;">
+                                <input type="text" placeholder="CVV" required style="width: 45%;">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary place-order-btn" id="submit-order-button">Acquire Specimen</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-backdrop" id="success-modal">
+        <div class="modal-content success-content">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h2>Order Logged Successfully!</h2>
+            <p>Your order has been recorded in Captain Barnaby's ledger. A certificate of origin will be processed along with your bone specimens.</p>
+            
+            <div class="order-details-card">
+                <h3>Order Ledger Summary</h3>
+                <div class="ledger-field"><strong>Customer:</strong> <span id="success-name"></span></div>
+                <div class="ledger-field"><strong>Destination:</strong> <span id="success-address"></span></div>
+                <div class="ledger-field"><strong>Total:</strong> <span id="success-total"></span></div>
+                <div class="ledger-field"><strong>Items:</strong> <span id="success-items"></span></div>
+                <div class="ledger-field"><strong>Google Sheet Logged:</strong> <span id="success-sheet-status">Checking URL...</span></div>
+            </div>
+
+            <div class="success-note">
+                <p><strong>Note for Developer:</strong> If you configured your Google Sheet Web App URL, this order was transmitted directly. You can inspect your Google Sheet now!</p>
+            </div>
+
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Return to Shop</button>
+        </div>
+    </div>
+
+    <!-- Google Sheet Configuration Modal (For Developer/Owner) -->
+    <div class="modal-backdrop" id="sheets-modal">
+        <div class="modal-content dev-modal">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-table"></i> Google Sheets Integration Guide</h3>
+                <button class="close-modal-btn" onclick="closeSheetsModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <p>You can automatically log website checkouts into a <strong>Google Sheet</strong>. This is 100% free and takes 3 minutes to set up using Google Apps Script.</p>
+
+            <div class="setup-steps">
+                <div class="step">
+                    <h4>Step 1: Create a Google Sheet</h4>
+                    <p>Create a new Google Sheet and add these headers in row 1:</p>
+                    <pre>Timestamp | Name | Email | Address | City | State | Zip | Items | Total</pre>
+                </div>
+                <div class="step">
+                    <h4>Step 2: Add Google Apps Script</h4>
+                    <p>Go to <strong>Extensions &gt; Apps Script</strong>. Paste the code snippet below into the editor (replace everything):</p>
+                    <textarea class="code-snippet-box" readonly onclick="this.select()">
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    
+    sheet.appendRow([
+      new Date().toLocaleString(),
+      data.name,
+      data.email,
+      data.address,
+      data.city,
+      data.state,
+      data.zip,
+      data.items,
+      data.total
+    ]);
+    
+    return ContentService.createTextOutput(JSON.stringify({ "status": "success", "message": "Logged successfully" }))
+      .setMimeType(ContentService.MimeType.JSON)
+      .setHeader('Access-Control-Allow-Origin', '*');
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({ "status": "error", "message": error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON)
+      .setHeader('Access-Control-Allow-Origin', '*');
+  }
+}
+
+function doGet(e) {
+  return ContentService.createTextOutput("Google Sheets Endpoint is Online.")
+    .setHeader('Access-Control-Allow-Origin', '*');
+}
+                    </textarea>
+                </div>
+                <div class="step">
+                    <h4>Step 3: Deploy as Web App</h4>
+                    <p>Click <strong>Deploy &gt; New Deployment</strong>. Choose <strong>Web App</strong>. Set "Execute As" to <strong>Me</strong>. Set "Who Has Access" to <strong>Anyone</strong>. Click Deploy, authorize permissions, and copy the **Web App URL**.</p>
+                </div>
+                <div class="step">
+                    <h4>Step 4: Paste Web App URL below</h4>
+                    <div class="url-input-container">
+                        <input type="url" id="sheet-url-input" placeholder="https://script.google.com/macros/s/.../exec">
+                        <button class="btn btn-secondary" onclick="saveSheetUrl()">Save Configuration</button>
+                    </div>
+                    <span id="sheet-save-status" class="save-status-msg"></span>
+                </div>
+            </div>
+
+            <!-- Free Hosting Guide Section -->
+            <div class="hosting-guide-sec">
+                <h3><i class="fa-solid fa-cloud-arrow-up"></i> Free Hosting Guide for skunkbones.com</h3>
+                <p>Since this is a high-performance static web application, you can host it for free. Here is the recommended approach:</p>
+                <ul>
+                    <li><strong>GitHub Pages (Recommended):</strong> Push this repository to a free GitHub repository. Go to Settings &gt; Pages, and set deployment to "GitHub Actions" or the "main" branch. It will host it free under <code>username.github.io/repo</code>.</li>
+                    <li><strong>Vercel / Netlify:</strong> Connect your GitHub repo to Vercel or Netlify. They will build and deploy it on a fast global CDN for free.</li>
+                    <li><strong>Custom Domain Setup (skunkbones.com):</strong> In Vercel/Netlify/GitHub, add <code>skunkbones.com</code> under custom domains. In your domain registrar (e.g., Namecheap, GoDaddy), point your DNS <strong>A Record</strong> to the hosting IP address (or CNAME record to the hosting subdomain). Complete instructions will be provided in the <code>README.md</code>.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>SKUNKBONES.COM</h3>
+                <p>Midcoast Maine's premier source for organic, gale-bleached mammalian calcium curiosities.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <a href="#shop" onclick="navigateTo('home')">Shop Specimens</a>
+                <a href="#story" onclick="navigateTo('story')">Our Heritage</a>
+                <a href="#legality" onclick="navigateTo('legality')">State Exclusions</a>
+                <a href="#facts" onclick="navigateTo('facts')">Skeletal Trivia</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Barnaby's Shed</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Edgecomb Road, Boothbay Harbor, Maine, 04538</p>
+                <p><i class="fa-solid fa-envelope"></i> barnaby@skunkbones.com</p>
+                <p class="parody-disclaimer">Disclaimer: This is a high-end parody and curiosities e-commerce store. Always respect wildlife laws and furbearer guidelines in your local jurisdiction.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SkunkBones.com. All Rights Reserved. Version 1.0.0. "Smell the Authenticity."</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
