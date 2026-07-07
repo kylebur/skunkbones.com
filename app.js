@@ -1,4 +1,4 @@
-/* app.js - v1.0.5 */
+/* app.js - v1.0.6 */
 /* Developed for skunkbones.com - Midcoast Maine Skunk Bones */
 
 // 1. Product Database
@@ -85,6 +85,9 @@ const triviaFacts = [
 
 // 3. State Exclusions
 const EXCLUDED_STATES = ['CA', 'NY', 'TX', 'GA', 'HI', 'WA', 'CT'];
+
+// Obfuscated Google Sheets URL (Base64 of Web App URL)
+const OBFUSCATED_SHEET_URL = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6ZTdiMEtyY1RhdnliUmlUVmdmU0diR3FEalk5OGNOelFYR2QtQ3VGbmJ2eFF5cjY1TGZsSmhBTkJLM2tGTmlQdVdsQS9leGVj';
 
 // 4. Cart & UI State
 let cart = [];
@@ -369,6 +372,7 @@ function handleCheckoutSubmit(e) {
         return;
     }
 
+    const honeypot = document.getElementById('checkout-website').value;
     const itemsSummary = cart.map(item => `${item.product.name} (Qty: ${item.quantity})`).join(', ');
     const totalCost = `$${getSubtotal().toFixed(2)}`;
 
@@ -380,7 +384,8 @@ function handleCheckoutSubmit(e) {
         state,
         zip,
         items: itemsSummary,
-        total: totalCost
+        total: totalCost,
+        honeypot: honeypot
     };
 
     // Close checkout
@@ -401,7 +406,19 @@ function openSuccessModal(order) {
     document.getElementById('success-items').textContent = order.items;
 
     const sheetStatusEl = document.getElementById('success-sheet-status');
-    const sheetUrl = localStorage.getItem('skunkbones_sheet_url');
+    
+    // Honeypot check: if filled, simulate success silently to fool bots
+    if (order.honeypot) {
+        console.warn("Spam Bot Detected via honeypot. Discarding order quietly.");
+        sheetStatusEl.textContent = 'Transmitted successfully (logged to Google Sheet!)';
+        sheetStatusEl.style.color = 'var(--success-color)';
+        cart = [];
+        updateCartCount();
+        return;
+    }
+
+    // Decode obfuscated sheet URL if local storage override is not set
+    const sheetUrl = localStorage.getItem('skunkbones_sheet_url') || atob(OBFUSCATED_SHEET_URL);
 
     if (!sheetUrl) {
         sheetStatusEl.textContent = 'Skipped (No Sheet URL configured in Developer Panel)';
@@ -476,7 +493,7 @@ function saveSheetUrl() {
 }
 
 function loadSheetUrl() {
-    const url = localStorage.getItem('skunkbones_sheet_url');
+    const url = localStorage.getItem('skunkbones_sheet_url') || atob(OBFUSCATED_SHEET_URL);
     if (url) {
         const input = document.getElementById('sheet-url-input');
         if (input) input.value = url;

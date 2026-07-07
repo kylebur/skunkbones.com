@@ -1,4 +1,4 @@
-<!-- skunkbones.com - v1.0.5 -->
+<!-- skunkbones.com - v1.0.6 -->
 <!-- Developed for skunkbones.com - Midcoast Maine Skunk Bones -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
 <body>
 
     <!-- Version Badge (Required by Rule 3) -->
-    <div id="gui-version-badge">skunkbones.com v1.0.5</div>
+    <div id="gui-version-badge">skunkbones.com v1.0.6</div>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -277,6 +277,12 @@
                     <div class="checkout-section">
                         <h4>1. Shipping Details</h4>
                         
+                        <!-- Honeypot Field for Spam Prevention (Option 2) -->
+                        <div class="form-group" style="display:none !important;">
+                            <label for="checkout-website">Website (Leave blank)</label>
+                            <input type="text" id="checkout-website" autocomplete="off" tabindex="-1">
+                        </div>
+
                         <div class="form-group">
                             <label for="checkout-name">Full Name</label>
                             <input type="text" id="checkout-name" required placeholder="Johnathan Alden">
@@ -537,7 +543,7 @@ function doGet(e) {
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SkunkBones.com. All Rights Reserved. Version 1.0.5. "Smell the Authenticity."</p>
+            <p>&copy; 2026 SkunkBones.com. All Rights Reserved. Version 1.0.6. "Smell the Authenticity."</p>
         </div>
     </footer>
 
