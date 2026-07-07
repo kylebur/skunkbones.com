@@ -1,4 +1,4 @@
-/* app.js - v1.0.4 */
+/* app.js - v1.0.5 */
 /* Developed for skunkbones.com - Midcoast Maine Skunk Bones */
 
 // 1. Product Database
@@ -85,9 +85,6 @@ const triviaFacts = [
 
 // 3. State Exclusions
 const EXCLUDED_STATES = ['CA', 'NY', 'TX', 'GA', 'HI', 'WA', 'CT'];
-
-// Default Google Sheets logging endpoint
-const DEFAULT_SHEET_URL = 'https://script.google.com/macros/s/AKfycbze7b0KrcTavybRiTVgfSGbGqDjY98cNzQXGd-CuFnbvxQyr65LflJhANBK3kFNiPuWlA/exec';
 
 // 4. Cart & UI State
 let cart = [];
@@ -404,10 +401,10 @@ function openSuccessModal(order) {
     document.getElementById('success-items').textContent = order.items;
 
     const sheetStatusEl = document.getElementById('success-sheet-status');
-    const sheetUrl = localStorage.getItem('skunkbones_sheet_url') || DEFAULT_SHEET_URL;
+    const sheetUrl = localStorage.getItem('skunkbones_sheet_url');
 
     if (!sheetUrl) {
-        sheetStatusEl.textContent = 'Skipped (No Sheet URL configured)';
+        sheetStatusEl.textContent = 'Skipped (No Sheet URL configured in Developer Panel)';
         sheetStatusEl.style.color = '#777';
     } else {
         sheetStatusEl.textContent = 'Transmitting order data...';
@@ -479,7 +476,7 @@ function saveSheetUrl() {
 }
 
 function loadSheetUrl() {
-    const url = localStorage.getItem('skunkbones_sheet_url') || DEFAULT_SHEET_URL;
+    const url = localStorage.getItem('skunkbones_sheet_url');
     if (url) {
         const input = document.getElementById('sheet-url-input');
         if (input) input.value = url;
