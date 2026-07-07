@@ -1,4 +1,4 @@
-/* app.js - v1.0.3 */
+/* app.js - v1.0.4 */
 /* Developed for skunkbones.com - Midcoast Maine Skunk Bones */
 
 // 1. Product Database
@@ -17,7 +17,7 @@ const products = [
         name: 'The Maine-Ly Metatarsal',
         category: 'limbs',
         price: 19.00,
-        image: 'assets/bone_collection.jpg',
+        image: 'assets/product_metatarsal.jpg',
         badge: 'Popular',
         description: 'An elegant metatarsal bone salvaged near Linekin Bay. Light, smooth, and highly polished by the coastal sand gales. Fits comfortably in a pocket as a Maine lucky charm.'
     },
@@ -26,7 +26,7 @@ const products = [
         name: 'The Whispering Vertebra',
         category: 'vertebrae',
         price: 24.00,
-        image: 'assets/bone_collection.jpg',
+        image: 'assets/product_vertebra.jpg',
         badge: 'Aromatic Cured',
         description: 'A perfectly preserved lumbar vertebra. Cured in wild rosemary and ocean fog. Sailors traditionally kept these in their oilskins to predict oncoming cold fronts.'
     },
@@ -35,7 +35,7 @@ const products = [
         name: 'The Midcoast Ribcage Ensemble',
         category: 'sets',
         price: 299.00,
-        image: 'assets/bone_collection.jpg',
+        image: 'assets/product_ribcage.jpg',
         badge: 'Rare Find',
         description: 'A beautifully reconstructed, semi-complete rib structure. Elegant and symmetrical. Discovered beneath a moss bed near Southport. Packaged in a glass display dome.'
     },
@@ -44,7 +44,7 @@ const products = [
         name: 'The Fog-Kissed Femur',
         category: 'limbs',
         price: 35.00,
-        image: 'assets/bone_collection.jpg',
+        image: 'assets/product_femur.jpg',
         badge: 'Limited Run',
         description: 'A robust femur bone showing thick cortical walls—a biological marker of a hearty diet of wharf lobster claws and crab remnants. Includes a wooden specimen tag.'
     },
@@ -53,7 +53,7 @@ const products = [
         name: 'The Skeletal Starter Kit',
         category: 'sets',
         price: 499.00,
-        image: 'assets/bone_collection.jpg',
+        image: 'assets/product_starter_kit.jpg',
         badge: 'Curator Choice',
         description: 'A premium wooden chest containing 12 distinct, ethically salvaged bones. Hand-classified by Captain Barnaby Higgins. Includes a signed magnifying glass and brass tweezers.'
     }
