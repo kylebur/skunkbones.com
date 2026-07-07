@@ -1,0 +1,4 @@
+# .gitignore - v1.0.0
+.DS_Store
+*.log
+.system_generated/
